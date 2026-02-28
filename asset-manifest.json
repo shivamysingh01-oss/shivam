@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/shivam/static/css/main.5c731b4e.css",
-    "main.js": "/shivam/static/js/main.799a2d61.js",
+    "main.js": "/shivam/static/js/main.e65dbb13.js",
     "index.html": "/shivam/index.html",
     "main.5c731b4e.css.map": "/shivam/static/css/main.5c731b4e.css.map",
-    "main.799a2d61.js.map": "/shivam/static/js/main.799a2d61.js.map"
+    "main.e65dbb13.js.map": "/shivam/static/js/main.e65dbb13.js.map"
   },
   "entrypoints": [
     "static/css/main.5c731b4e.css",
-    "static/js/main.799a2d61.js"
+    "static/js/main.e65dbb13.js"
   ]
 }
