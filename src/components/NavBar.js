@@ -26,7 +26,7 @@ class NavBar extends React.Component {
               <Nav.Link href="mailto:shivam.y.singh01@gmail.com">
                 <EmailRoundedIcon style={{ fontSize: 20 }}></EmailRoundedIcon>
               </Nav.Link>
-              <Nav.Link href="https://github.com/shivam" target="_blank">
+              <Nav.Link href="https://github.com/shivamysingh01-oss" target="_blank">
                 <GitHubIcon style={{ fontSize: 19 }}></GitHubIcon>
               </Nav.Link>
               <Nav.Link
