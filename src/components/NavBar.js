@@ -13,7 +13,7 @@ class NavBar extends React.Component {
     return (
       <Navbar fixed="top" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="#">Gazi Jarin</Navbar.Brand>
+          <Navbar.Brand href="#">Shivam Singh</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -23,21 +23,22 @@ class NavBar extends React.Component {
               <Nav.Link href="#projects">Projects</Nav.Link>
             </Nav>
             <Nav className="ml-auto">
-              <Nav.Link href="mailto:gazijarin@gmail.com">
+              <Nav.Link href="mailto:shivam.y.singh01@gmail.com">
                 <EmailRoundedIcon style={{ fontSize: 20 }}></EmailRoundedIcon>
               </Nav.Link>
-              <Nav.Link href="https://github.com/gazijarin" target="_blank">
+              <Nav.Link href="https://github.com/shivam" target="_blank">
                 <GitHubIcon style={{ fontSize: 19 }}></GitHubIcon>
               </Nav.Link>
               <Nav.Link
-                href="https://www.linkedin.com/in/gazi-jarin-3644b0172/"
+                  href="https://www.linkedin.com/in/shivam-sso/"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <LinkedInIcon style={{ fontSize: 21 }}></LinkedInIcon>
               </Nav.Link>
-              <Nav.Link href="https://medium.com/@gazijarin.ai" target="_blank">
+              {/* <Nav.Link href="https://medium.com/@gazijarin.ai" target="_blank">
                 <BorderColorIcon style={{ fontSize: 20 }}></BorderColorIcon>
-              </Nav.Link>
+              </Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
