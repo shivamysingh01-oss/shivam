@@ -20,13 +20,12 @@ class About extends React.Component {
     const one = (
       <p>
         I am currently a <b>Software Engineer</b> at
-        <a href="https://www.jio.com/"> Jio</a>, where I help build
-        autobidder models that make Jio 5g money.
+        <a href="https://www.jio.com/"> Jio</a>, where I help build products that make Jio 5g money.
       </p>
     );
     const two = (
       <p>
-        Outside of work, I’m nerdy about tech gadgets, love literary fiction,
+        Outside of work, I’m nerdy about tech gadgets, love playing cricket,
         and play way too many battle royale games. Oh, I make content too.
       </p>
     );
