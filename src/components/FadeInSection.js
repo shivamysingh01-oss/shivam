@@ -11,8 +11,9 @@ export default function FadeInSection(props) {
         }
       });
     });
-    observer.observe(domRef.current);
-    return () => observer.unobserve(domRef.current);
+    const node = domRef.current;
+    observer.observe(node);
+    return () => observer.unobserve(node);
   }, []);
   return (
     <div

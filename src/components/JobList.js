@@ -86,7 +86,7 @@ const JobList = () => {
       jobTitle: "Software Engineer @",
       duration: "JULY 2022 - PRESENT",
       desc: [
-        "Built and launched large-scale models at JIO scale, influencing policy decisions across millions of users",
+        "Built and launched large-scale models at JIO, influencing policy decisions across millions of users",
         "Led end-to-end model development (data, training, evaluation, and production launch) for systems, directly driving multi-million-dollar revenue",
         "Successfully deployed PCF in production, now handling 170 million of 5G users in India, ensuring policy enforcement for calls (Local/STD/ISD/Roaming) by evaluating multi-dimensional rules based on caller location, home network, destination location, and operator mappings, enabling dynamic charging decisions without code changes.",
         "Built a Java-based microservice (PGW) enabling subscriber provisioning across multiple databases using REST APIs, supporting multiple operations for 5G subscribers, currently handling 5 million customers."

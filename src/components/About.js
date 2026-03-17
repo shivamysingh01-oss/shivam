@@ -33,11 +33,10 @@ class About extends React.Component {
     const tech_stack = [
       "Java",
       "MySQL",
-      "React.js",
+      "SpringBoot",
       "Python",
-      "Javascript ES6+",
-      "C#",
-    ];
+      "React.js",
+      "C#",];
 
     return (
       <div id="about">
