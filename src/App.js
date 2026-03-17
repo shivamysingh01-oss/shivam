@@ -3,6 +3,7 @@ import Intro from "./components/Intro";
 import Experience from "./components/Experience";
 import About from "./components/About";
 import Credits from "./components/Credits";
+import Dump from "./components/Dump";
 import NavBar from "./components/NavBar";
 import "./App.css";
 import "./styles/Global.css";
@@ -15,7 +16,8 @@ function App() {
       <div id="content">
         <Intro></Intro>
         <About></About>
-        <Experience></Experience>
+<Experience></Experience>
+        <Dump />
         <Credits></Credits>
       </div>
     </div>

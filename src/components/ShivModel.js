@@ -5,16 +5,15 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 class ThreeJSAnimation extends Component {
   componentDidMount() {
     (function () {
-      // Set our main variables
       let scene,
         renderer,
         camera,
-        model, // Our character
-        neck, // Reference to the neck bone in the skeleton
-        waist, // Reference to the waist bone in the skeleton
-        mixer, // THREE.js animations mixer
-        idle, // Idle, the default state our character returns to
-        clock = new THREE.Clock(); // Used for anims, which run to a clock instead of frame rate
+        model,
+        neck,
+        waist,
+        mixer,
+        idle,
+        clock = new THREE.Clock();
 
       init();
 
@@ -22,21 +21,18 @@ class ThreeJSAnimation extends Component {
         const MODEL_PATH =
           "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/stacy_lightweight.glb";
         const backgroundColor = 0x0a192f;
-        // Init the scene
         scene = new THREE.Scene();
         scene.background = new THREE.Color(backgroundColor);
         scene.fog = null;
 
-        // Init the renderer
         renderer = new THREE.WebGLRenderer({
           alpha: true
         });
         renderer.shadowMap.enabled = true;
         renderer.setSize(0.35 * window.innerWidth, 0.35 * window.innerHeight);
-        var container = document.getElementById("gazi-model");
+        var container = document.getElementById("shiv-model");
         container.appendChild(renderer.domElement);
 
-        // Add a camera
         camera = new THREE.PerspectiveCamera(
           65,
           window.innerWidth / window.innerHeight,
@@ -57,7 +53,6 @@ class ThreeJSAnimation extends Component {
         loader.load(
           MODEL_PATH,
           function (gltf) {
-            // A lot is going to happen here
             model = gltf.scene;
             let fileAnimations = gltf.animations;
 
@@ -67,7 +62,6 @@ class ThreeJSAnimation extends Component {
                 o.receiveShadow = true;
                 o.material = stacy_mtl;
               }
-              // Reference the neck and waist bones
               if (o.isBone && o.name === "mixamorigNeck") {
                 neck = o;
               }
@@ -76,7 +70,6 @@ class ThreeJSAnimation extends Component {
               }
             });
 
-            // Set the models initial scale
             model.scale.set(15, 15, 15);
             model.position.y = -23;
 
@@ -91,16 +84,14 @@ class ThreeJSAnimation extends Component {
             idle = mixer.clipAction(idleAnim);
             idle.play();
           },
-          undefined, // We don't need this function
+          undefined,
           function (error) {
             console.error(error);
           }
         );
 
-        // Add lights
         let hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.61);
         hemiLight.position.set(0, 50, 0);
-        // Add hemisphere light to scene
         scene.add(hemiLight);
 
         let d = 8.25;
@@ -114,10 +105,8 @@ class ThreeJSAnimation extends Component {
         dirLight.shadow.camera.right = d;
         dirLight.shadow.camera.top = d;
         dirLight.shadow.camera.bottom = d * -1;
-        // Add directional Light to scene
         scene.add(dirLight);
 
-        // Floor
         let floorGeometry = new THREE.PlaneGeometry(5000, 5000, 1, 1);
         let floorMaterial = new THREE.MeshPhongMaterial({
           color: 0x0a192f,
@@ -125,7 +114,7 @@ class ThreeJSAnimation extends Component {
         });
 
         let floor = new THREE.Mesh(floorGeometry, floorMaterial);
-        floor.rotation.x = -0.5 * Math.PI; // This is 90 degrees by the way
+        floor.rotation.x = -0.5 * Math.PI;
         floor.receiveShadow = true;
         floor.position.y = -11;
         scene.add(floor);
@@ -203,32 +192,21 @@ class ThreeJSAnimation extends Component {
           y: window.innerHeight
         };
 
-        // Left (Rotates neck left between 0 and -degreeLimit)
-
-        // 1. If cursor is in the left half of screen
         if (x <= w.x / 2) {
-          // 2. Get the difference between middle of screen and cursor position
           xdiff = w.x / 2 - x;
-          // 3. Find the percentage of that difference (percentage toward edge of screen)
           xPercentage = (xdiff / (w.x / 2)) * 100;
-          // 4. Convert that to a percentage of the maximum rotation we allow for the neck
           dx = ((degreeLimit * xPercentage) / 100) * -1;
         }
-        // Right (Rotates neck right between 0 and degreeLimit)
         if (x >= w.x / 2) {
           xdiff = x - w.x / 2;
           xPercentage = (xdiff / (w.x / 2)) * 100;
           dx = (degreeLimit * xPercentage) / 100;
         }
-        // Up (Rotates neck up between 0 and -degreeLimit)
         if (y <= w.y / 2) {
           ydiff = w.y / 2 - y;
           yPercentage = (ydiff / (w.y / 2)) * 100;
-          // Note that I cut degreeLimit in half when she looks up
           dy = ((degreeLimit * 0.5 * yPercentage) / 100) * -1;
         }
-
-        // Down (Rotates neck down between 0 and degreeLimit)
         if (y >= w.y / 2) {
           ydiff = y - w.y / 2;
           yPercentage = (ydiff / (w.y / 2)) * 100;
@@ -246,3 +224,4 @@ class ThreeJSAnimation extends Component {
   }
 }
 export default ThreeJSAnimation;
+
