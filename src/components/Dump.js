@@ -35,7 +35,7 @@ this.carouselTimer = setInterval(() => {
         image: process.env.PUBLIC_URL + "/assets/setup.png",
       },
 
-      "game": {
+      "fav <3": {
         image: process.env.PUBLIC_URL + "/assets/game.png",
       },
     };
