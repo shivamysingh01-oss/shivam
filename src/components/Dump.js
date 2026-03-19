@@ -9,7 +9,7 @@ class Dump extends React.Component {
     this.handleSelect = this.handleSelect.bind(this);
 this.carouselTimer = setInterval(() => {
       if (!document.querySelector('#dump:hover')) {
-        const nextIndex = (this.state.activeIndex + 1) % 3;
+        const nextIndex = (this.state.activeIndex + 1) % 4;
         this.setState({ activeIndex: nextIndex });
       }
     }, 4000);
@@ -33,6 +33,10 @@ this.carouselTimer = setInterval(() => {
       },
       "desk setup": {
         image: process.env.PUBLIC_URL + "/assets/setup.png",
+      },
+
+      "game": {
+        image: process.env.PUBLIC_URL + "/assets/game.png",
       },
     };
 
